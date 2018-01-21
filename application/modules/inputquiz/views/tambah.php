@@ -23,13 +23,13 @@
             <!-- /.box-header -->
 
             <div class="box-body">
-              <form class="" action="<?php echo base_url('inputmateri/prosestambah') ?>" method="post" enctype="multipart/form-data">
+              <form class="" action="<?php echo base_url('inputquiz/prosestambah') ?>" method="post" enctype="multipart/form-data">
                 <?php
 
                 ?>
                 <div class="form-group">
-                  <label>Judul</label>
-                  <input type="text" class="form-control" name="judul" placeholder="Masukkan judul" required>
+                  <label>Soal</label>
+                  <input type="text" class="form-control" name="soal" placeholder="Masukkan soal" required>
                 </div>
                 <div class="form-group">
                   <label>Kategori</label>
@@ -39,9 +39,27 @@
                     <?php endforeach; ?>
                   </select>
                 </div>
-                <div class="form-group">
-                  <textarea id="editor1" name="materi" rows="10" cols="80" required></textarea>
+								<div class="form-group">
+                  <label>Pilihan A</label>
+                  <input type="text" class="form-control" name="a" placeholder="Masukkan pilhan" required>
                 </div>
+								<div class="form-group">
+                  <label>Pilihan B</label>
+                  <input type="text" class="form-control" name="b" placeholder="Masukkan pilhan" required>
+                </div>
+								<div class="form-group">
+                  <label>Pilihan C</label>
+                  <input type="text" class="form-control" name="c" placeholder="Masukkan pilhan" required>
+                </div>
+								<div class="form-group">
+                  <label>Pilihan D</label>
+                  <input type="text" class="form-control" name="d" placeholder="Masukkan pilhan" required>
+                </div>
+								<div class="form-group">
+                  <label>Jawaban</label>
+                  <input type="text" class="form-control" name="jawaban" placeholder="Masukkan Jawaban" required>
+                </div>
+
                 <div class="form-group">
                   <input type="submit" class="btn btn-success" value="Simpan">
                   </input>

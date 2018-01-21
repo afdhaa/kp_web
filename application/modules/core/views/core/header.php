@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/') ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <link rel="stylesheet" href="<?php echo base_url('assets/') ?>bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo base_url('assets/') ?>bower_components/datatables.net-bs/css/jquery.dataTables.min.css">
+
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
@@ -52,26 +53,17 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MENU</li>
-        <li class="<?php if($this->uri->segment(1)=="home"){
-          echo "active";
-        } ?>">
+        <li class="active">
           <a href="<?php echo base_url('home') ?>">
             <i class="fa fa-dashboard"></i> <span>Homepage</span>
           </a>
         </li>
-        <li class="treeview">
-          <a href="<?php echo base_url('home') ?>">
-            <i class="fa fa-book"></i> <span>Materi</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+        <li class="active">
+          <a href="<?php echo base_url('materi') ?>">
+            <i class="fa fa-book"></i> <span>Daftar Materi</span>
           </a>
-          <ul class="treeview-menu">
-            <li class="active"><a href="index.htm"><i class="fa fa-circle-o"></i>Input materi</a></li>
-            <li><a href=""><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-          </ul>
         </li>
-        <li class="treeview">
+        <li class="active treeview">
           <a href="<?php echo base_url('home') ?>">
             <i class="fa fa-book"></i> <span>Quiz</span>
             <span class="pull-right-container">
@@ -79,14 +71,12 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href=""><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+            <li class="active"><a href="<?php echo base_url('Quiz/quizbesar') ?>"><i class="fa fa-circle-o"></i>Quiz Besar</a></li>
+            <!-- <li><a href=""><i class="fa fa-circle-o"></i> Dashboard v2</a></li> -->
           </ul>
         </li>
         <?php if ($this->session->userdata('role')=="guru"): ?>
-          <li class="<?php if($this->uri->segment(1)=="inputmateri"){
-            echo "active";
-          } ?> treeview">
+          <li class="active treeview">
             <a href="#">
               <i class="fa fa-book"></i> <span>Admin</span>
               <span class="pull-right-container">
@@ -94,10 +84,9 @@
               </span>
             </a>
             <ul class="treeview-menu">
-              <li class="<?php if($this->uri->segment(1)=="inputmateri"){
-                echo "active";
-              } ?>"><a href="<?php echo base_url('inputmateri') ?>"><i class="fa fa-circle-o"></i>Tambah Materi</a></li>
+              <li class="active"><a href="<?php echo base_url('inputmateri') ?>"><i class="fa fa-circle-o"></i>Tambah Materi</a></li>
               <li><a href="<?php echo base_url('inputquiz') ?>"><i class="fa fa-circle-o"></i>Tambah Quiz</a></li>
+              <li><a href="<?php echo base_url('nilai') ?>"><i class="fa fa-circle-o"></i>Hasil Nilai</a></li>
             </ul>
           </li>
         <?php endif; ?>

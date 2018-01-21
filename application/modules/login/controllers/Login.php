@@ -22,7 +22,8 @@ class Login extends MY_Controller {
 		$cek=$this->M_login->cek($username,$password);
 		$newuser = array(
 	        'username'  => $cek[0]['username'],
-	        'role'     => $cek[0]['role']
+	        'role'     => $cek[0]['role'],
+					'kd_user'     => $cek[0]['kd_user']
 		);
 		$data=$this->session->set_userdata($newuser);
 		if ($cek) {

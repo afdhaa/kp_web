@@ -6,7 +6,7 @@
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="#"><i class="fa fa-book"></i> Admin</a></li>
-			<li class="active">Input Materi</li>
+			<li class="active">Materi</li>
 		</ol>
 	</section>
 
@@ -20,10 +20,6 @@
               <i class="fa fa-info"></i>
               <h3 class="box-title">Input</h3>
             </div>
-						<div class="box-header with-border">
-              <a class="btn btn-success" href=<?php echo base_url('inputmateri/tambah'); ?> >Tambah Materi</a>
-            </div>
-
 							<?php
 								if ($this->session->flashdata('hapus')) {
 									echo "<div class='box-header with-border'>";
@@ -51,9 +47,7 @@
                 <tr>
                   <th>No</th>
 									<th>Judul</th>
-                  <th>Materi</th>
                   <th>Kategori</th>
-									<th>Action</th>
 									<th>Action</th>
                 </tr>
                 </thead>
@@ -64,10 +58,9 @@
 										<tr>
 											<td><?php echo $no;?></td>
 											<td><?php echo $value->judul; ?></td>
-											<td><?php echo substr(strip_tags($value->materi), 0, 120) . '...';?></td>
+											<!-- <td><?php echo substr(strip_tags($value->materi), 0, 120) . '...';?></td> -->
 											<td><?php echo $value->kategori; ?></td>
-											<td><a class="btn btn-success" href="<?php echo base_url('inputmateri/edit/'.$value->kd_materi.'"') ?>">Edit</a></td>
-											<td><a class="btn btn-danger" href="<?php echo base_url('inputmateri/hapus/'.$value->kd_materi.'"') ?>" onclick="return confirm('Are you sure?')">Hapus</a></td>
+											<td><a class="btn btn-success" href="<?php echo base_url('Materi/baca/'.$value->kd_materi.'"') ?>">Baca</a></td>
 										</tr>
 									<?php $no++; endforeach; ?>
 
