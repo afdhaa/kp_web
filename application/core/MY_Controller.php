@@ -15,8 +15,8 @@ class MY_Controller extends MX_Controller {
     public function view($view,$data=array())
   	{
   		//print_r($this->session->userdata());die();
-      $nama =$this->session->userdata('username');
-  		if ($nama!=""||$nama!==null) {
+      $nama['nama'] =$this->session->userdata('username');
+  		if ($nama['nama']!=""||$nama['nama']!==null) {
   			$this->load->view('core/core/header');
   			$this->load->view($view,$data);
   			$this->load->view('core/core/footer');
